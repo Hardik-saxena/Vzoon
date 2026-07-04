@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VZOON — Style Bigger. Spend Smarter. | Men's Fashion, Jaipur</title>
+<meta name="description" content="VZOON Jaipur — premium men's fashion at honest prices. Pick ANY 3 items — shirts, jeans, pants or shoes, any combination — for just ₹1099. Multiple stores across Jaipur." />
+<meta property="og:title" content="VZOON — Any 3 Items, ₹1099 Only" />
+<meta property="og:description" content="Premium men's fashion in Jaipur. Mix & match any 3 items — shirts, jeans, pants, shoes — for ₹1099 flat." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#0B0B0C" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  "name": "VZOON",
+  "description": "Men's fashion store in Jaipur offering any 3 items for ₹1099 — shirts, jeans, pants, shoes.",
+  "image": "",
+  "priceRange": "₹399 - ₹2999",
+  "address": [
+    {"@type":"PostalAddress","streetAddress":"Shop 14, C-Scheme Market","addressLocality":"Jaipur","addressRegion":"Rajasthan","postalCode":"302001","addressCountry":"IN"},
+    {"@type":"PostalAddress","streetAddress":"Vaishali Nagar Main Market","addressLocality":"Jaipur","addressRegion":"Rajasthan","postalCode":"302021","addressCountry":"IN"},
+    {"@type":"PostalAddress","streetAddress":"Tonk Road, near World Trade Park","addressLocality":"Jaipur","addressRegion":"Rajasthan","postalCode":"302018","addressCountry":"IN"}
+  ],
+  "telephone": "+91-90000-00000",
+  "openingHours": "Mo-Su 10:30-21:30"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --ink:#0B0B0C;
+    --charcoal:#17171A;
+    --charcoal-2:#202024;
+    --bone:#F5F3EE;
+    --smoke:#9A9A9E;
+    --line:#2B2B2F;
+    --signal:#FFC400;
+    --riot:#E2122A;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bone);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .font-display{font-family:'Anton',sans-serif; letter-spacing:0.01em;}
+  .font-tag{font-family:'JetBrains Mono',monospace;}
+  ::selection{background:var(--signal); color:var(--ink);}
+
+  /* scrollbar */
+  ::-webkit-scrollbar{width:8px;}
+  ::-webkit-scrollbar-track{background:var(--ink);}
+  ::-webkit-scrollbar-thumb{background:var(--signal); border-radius:4px;}
+
+  /* glass */
+  .glass{
+    background:rgba(11,11,12,0.55);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .glass-light{
+    background:rgba(245,243,238,0.7);
+    backdrop-filter:blur(16px) saturate(160%);
+    -webkit-backdrop-filter:blur(16px) saturate(160%);
+    border:1px solid rgba(255,255,255,0.5);
+  }
+
+  /* HANG TAG — signature motif */
+  .hangtag{
+    position:relative;
+    background:var(--signal);
+    color:var(--ink);
+    clip-path:polygon(18% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 50%);
+    padding:1.1rem 1.4rem 1.1rem 2.2rem;
+    display:inline-flex;
+    flex-direction:column;
+    align-items:flex-start;
+    box-shadow:0 18px 40px -10px rgba(0,0,0,0.45);
+  }
+  .hangtag::after{
+    content:"";
+    position:absolute;
+    left:9%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:9px;height:9px;
+    background:var(--ink);
+    border-radius:50%;
+  }
+  .hangtag-red{background:var(--riot); color:#fff;}
+  .hangtag-red::after{background:#fff;}
+  .hangtag-dark{background:var(--charcoal-2); color:var(--bone); border:1px solid var(--line);}
+  .hangtag-dark::after{background:var(--signal);}
+
+  .float-tag{
+    animation:floatTag 5s ease-in-out infinite;
+  }
+  @keyframes floatTag{
+    0%,100%{transform:translateY(0px) rotate(-4deg);}
+    50%{transform:translateY(-14px) rotate(2deg);}
+  }
+
+  /* reveal */
+  .reveal{opacity:0; transform:translateY(36px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  .reveal-stagger > * {transition-delay:calc(var(--i) * 90ms);}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{transition:none; opacity:1; transform:none;}
+    .float-tag{animation:none;}
+    *{scroll-behavior:auto !important;}
+  }
+
+  .marquee-track{
+    display:flex;
+    width:max-content;
+    animation:marquee 22s linear infinite;
+  }
+  @keyframes marquee{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .card-img-zoom{overflow:hidden;}
+  .card-img-zoom img{transition:transform .7s cubic-bezier(.16,1,.3,1), filter .5s ease;}
+  .card-img-zoom:hover img{transform:scale(1.08); filter:brightness(0.85);}
+
+  .underline-grow{position:relative;}
+  .underline-grow::after{
+    content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:var(--signal);
+    transition:width .35s ease;
+  }
+  .underline-grow:hover::after{width:100%;}
+
+  .btn-primary{
+    background:var(--riot); color:#fff; font-weight:700; letter-spacing:.02em;
+    padding:0.95rem 2.1rem; border-radius:2px; position:relative; overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 30px -8px rgba(226,18,42,.55);}
+  .btn-ghost{
+    border:1.5px solid rgba(245,243,238,.5); color:var(--bone); font-weight:600;
+    padding:0.9rem 2rem; border-radius:2px; transition:all .25s ease;
+  }
+  .btn-ghost:hover{background:var(--bone); color:var(--ink); border-color:var(--bone);}
+
+  .num-tag{
+    font-family:'JetBrains Mono',monospace; font-size:.7rem; letter-spacing:.18em;
+    color:var(--signal); border:1px solid var(--line); padding:.25rem .6rem; border-radius:999px;
+  }
+
+  .accordion-content{max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(.16,1,.3,1);}
+
+  .testi-dot{width:8px;height:8px;border-radius:50%;background:var(--line); cursor:pointer; transition:.3s;}
+  .testi-dot.active{background:var(--signal); width:22px; border-radius:4px;}
+
+  .price-strike{position:relative; color:var(--smoke);}
+  .price-strike::after{content:""; position:absolute; left:0; right:0; top:50%; height:1px; background:var(--smoke);}
+
+  .heart-btn svg{transition:transform .3s ease;}
+  .heart-btn.active svg{fill:var(--riot); stroke:var(--riot); transform:scale(1.15);}
+
+  .nav-link{position:relative;}
+  .nav-link::after{content:""; position:absolute; left:0; right:0; bottom:-4px; height:1px; background:var(--signal); transform:scaleX(0); transition:transform .3s ease;}
+  .nav-link:hover::after{transform:scaleX(1);}
+
+  .store-card{transition:transform .35s ease, box-shadow .35s ease;}
+  .store-card:hover{transform:translateY(-6px);}
+
+  .skeleton{background:linear-gradient(90deg, var(--charcoal) 25%, var(--charcoal-2) 37%, var(--charcoal) 63%); background-size:400% 100%; animation:shimmer 1.4s infinite;}
+  @keyframes shimmer{0%{background-position:100% 50%;}100%{background-position:0 50%;}}
+</style>
+</head>
+<body class="antialiased">
+
+<div class="grain"></div>
+
+<!-- ============ LOADER ============ -->
+<div id="loader" class="fixed inset-0 bg-[var(--ink)] z-[100] flex items-center justify-center transition-opacity duration-700">
+  <div class="font-display text-[var(--bone)] text-5xl tracking-wider">
+    VZ<span class="text-[var(--signal)]">●</span>ON
+  </div>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="glass">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16 md:h-20">
+      <a href="#home" class="font-display text-2xl md:text-3xl text-[var(--bone)] tracking-wide">VZ<span class="text-[var(--signal)]">O</span>ON</a>
+      <ul class="hidden lg:flex items-center gap-9 text-[var(--bone)] text-sm font-medium">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#offer" class="nav-link">Offers</a></li>
+        <li><a href="#categories" class="nav-link">Shop</a></li>
+        <li><a href="#arrivals" class="nav-link">New Arrivals</a></li>
+        <li><a href="#stores" class="nav-link">Store Locator</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#offer" class="hangtag-red hangtag font-tag text-xs">₹1099 / 3 ITEMS</a>
+      </div>
+      <button id="menuBtn" class="lg:hidden text-[var(--bone)]" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="lg:hidden hidden glass border-t border-white/10">
+    <ul class="flex flex-col px-6 py-5 gap-4 text-[var(--bone)] text-base font-medium">
+      <li><a href="#home" class="mob-link">Home</a></li>
+      <li><a href="#offer" class="mob-link">Offers</a></li>
+      <li><a href="#categories" class="mob-link">Shop</a></li>
+      <li><a href="#arrivals" class="mob-link">New Arrivals</a></li>
+      <li><a href="#stores" class="mob-link">Store Locator</a></li>
+      <li><a href="#gallery" class="mob-link">Gallery</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="relative min-h-screen flex items-center bg-[var(--ink)] overflow-hidden pt-16">
+  <div class="absolute inset-0 grid grid-cols-3 opacity-70">
+    <div class="card-img-zoom h-full"><img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?q=80&w=900&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Men's fashion model in shirt"></div>
+    <div class="card-img-zoom h-full hidden md:block"><img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=900&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Men's fashion model street style"></div>
+    <div class="card-img-zoom h-full"><img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=900&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Men's fashion model sneakers and denim"></div>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[var(--ink)]/80 to-[var(--ink)]/30"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-[var(--ink)]/90 via-transparent to-[var(--ink)]/60"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8 w-full grid lg:grid-cols-12 gap-10 items-end pb-20 pt-28">
+    <div class="lg:col-span-8 reveal in">
+      <span class="num-tag inline-block mb-6">JAIPUR'S MIX &amp; MATCH FASHION HOUSE</span>
+      <h1 class="font-display text-[var(--bone)] text-[13vw] leading-[0.92] md:text-7xl lg:text-8xl">
+        STYLE BIGGER.<br><span class="text-[var(--signal)]">SPEND SMARTER.</span>
+      </h1>
+      <p class="text-[var(--bone)]/80 text-lg md:text-xl mt-6 max-w-xl">
+        Choose <span class="text-[var(--signal)] font-semibold">any 3 fashion items</span> — shirts, jeans, pants or shoes, in any combination you like — for one flat price of <span class="text-[var(--signal)] font-semibold">₹1099</span>.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-9">
+        <a href="#categories" class="btn-primary">Shop Now</a>
+        <a href="#stores" class="btn-ghost">Find Nearest Store</a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-4 flex justify-end">
+      <div class="hangtag float-tag font-tag">
+        <span class="text-xs">CHOOSE ANY</span>
+        <span class="font-display text-4xl leading-none">3 ITEMS</span>
+        <span class="text-xs mt-1">FLAT PRICE</span>
+        <span class="font-display text-3xl leading-none">₹1099</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-[var(--bone)]/60 text-xs font-tag flex flex-col items-center gap-2 z-10">
+    <span>SCROLL</span>
+    <div class="w-px h-8 bg-[var(--bone)]/40"></div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE STRIP ============ -->
+<div class="bg-[var(--signal)] text-[var(--ink)] overflow-hidden py-3 font-tag text-sm font-bold">
+  <div class="marquee-track">
+    <span class="px-6">★ ANY 3 ITEMS — ₹1099 ONLY</span>
+    <span class="px-6">★ 5+ STORES ACROSS JAIPUR</span>
+    <span class="px-6">★ PREMIUM FABRIC, HONEST PRICING</span>
+    <span class="px-6">★ ANY 3 ITEMS — ₹1099 ONLY</span>
+    <span class="px-6">★ 5+ STORES ACROSS JAIPUR</span>
+    <span class="px-6">★ PREMIUM FABRIC, HONEST PRICING</span>
+  </div>
+</div>
+
+<!-- ============ WHY CHOOSE VZOON ============ -->
+<section class="bg-[var(--bone)] py-24 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-14">
+      <h2 class="font-display text-4xl md:text-5xl">WHY VZOON</h2>
+      <p class="text-[var(--smoke)] max-w-md">Five reasons Jaipur's sharpest dressers shop with us before anywhere else.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-[var(--line)]/30 reveal-stagger">
+      <!-- card template repeated -->
+      <div class="reveal bg-[var(--bone)] p-7 hover:bg-[var(--ink)] hover:text-[var(--bone)] transition-colors duration-300 group" style="--i:0">
+        <svg class="mb-5" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+        <h3 class="font-display text-lg mb-2">AFFORDABLE FASHION</h3>
+        <p class="text-sm text-[var(--smoke)] group-hover:text-[var(--bone)]/70">Real wardrobe value — not discount-bin compromises.</p>
+      </div>
+      <div class="reveal bg-[var(--bone)] p-7 hover:bg-[var(--ink)] hover:text-[var(--bone)] transition-colors duration-300 group" style="--i:1">
+        <svg class="mb-5" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg>
+        <h3 class="font-display text-lg mb-2">PREMIUM QUALITY</h3>
+        <p class="text-sm text-[var(--smoke)] group-hover:text-[var(--bone)]/70">Stitched, washed and finished to last a season of wear.</p>
+      </div>
+      <div class="reveal bg-[var(--bone)] p-7 hover:bg-[var(--ink)] hover:text-[var(--bone)] transition-colors duration-300 group" style="--i:2">
+        <svg class="mb-5" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12l18-9-9 18-2-7z"/></svg>
+        <h3 class="font-display text-lg mb-2">LATEST TRENDS</h3>
+        <p class="text-sm text-[var(--smoke)] group-hover:text-[var(--bone)]/70">New drops every few weeks, tracked off street &amp; runway.</p>
+      </div>
+      <div class="reveal bg-[var(--bone)] p-7 hover:bg-[var(--ink)] hover:text-[var(--bone)] transition-colors duration-300 group" style="--i:3">
+        <svg class="mb-5" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+        <h3 class="font-display text-lg mb-2">MULTIPLE JAIPUR STORES</h3>
+        <p class="text-sm text-[var(--smoke)] group-hover:text-[var(--bone)]/70">Walk in across the city — same offer, every branch.</p>
+      </div>
+      <div class="reveal bg-[var(--bone)] p-7 hover:bg-[var(--ink)] hover:text-[var(--bone)] transition-colors duration-300 group" style="--i:4">
+        <svg class="mb-5" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        <h3 class="font-display text-lg mb-2">BEST VALUE DEALS</h3>
+        <p class="text-sm text-[var(--smoke)] group-hover:text-[var(--bone)]/70">₹1099 for 3 beats anything else on the high street.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section id="categories" class="bg-[var(--bone)] py-24 px-5 md:px-8 border-t border-black/5">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-14">
+      <span class="num-tag mb-4 inline-block !text-[var(--ink)] !border-[var(--ink)]/20">SHOP BY CATEGORY</span>
+      <h2 class="font-display text-4xl md:text-5xl">PICK YOUR THREE</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <a href="javascript:void(0)" class="reveal relative card-img-zoom rounded-sm aspect-[3/4] block group" style="--i:0">
+        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Shirts">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0"></div>
+        <span class="absolute bottom-5 left-5 font-display text-white text-2xl underline-grow">SHIRTS</span>
+      </a>
+      <a href="javascript:void(0)" class="reveal relative card-img-zoom rounded-sm aspect-[3/4] block group" style="--i:1">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Jeans">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0"></div>
+        <span class="absolute bottom-5 left-5 font-display text-white text-2xl underline-grow">JEANS</span>
+      </a>
+      <a href="javascript:void(0)" class="reveal relative card-img-zoom rounded-sm aspect-[3/4] block group" style="--i:2">
+        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Pants">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0"></div>
+        <span class="absolute bottom-5 left-5 font-display text-white text-2xl underline-grow">PANTS</span>
+      </a>
+      <a href="javascript:void(0)" class="reveal relative card-img-zoom rounded-sm aspect-[3/4] block group" style="--i:3">
+        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Shoes">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0"></div>
+        <span class="absolute bottom-5 left-5 font-display text-white text-2xl underline-grow">SHOES</span>
+      </a>
+      <a href="javascript:void(0)" class="reveal relative card-img-zoom rounded-sm aspect-[3/4] block group" style="--i:4">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="T-Shirts">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0"></div>
+        <span class="absolute bottom-5 left-5 font-display text-white text-2xl underline-grow">T-SHIRTS</span>
+      </a>
+      <a href="javascript:void(0)" class="reveal relative card-img-zoom rounded-sm aspect-[3/4] block group" style="--i:5">
+        <img src="https://images.unsplash.com/photo-1611923134239-b9be5816e23c?q=80&w=700&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Accessories">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0"></div>
+        <span class="absolute bottom-5 left-5 font-display text-white text-2xl underline-grow">ACCESSORIES</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED OFFER ============ -->
+<section id="offer" class="relative bg-[var(--ink)] py-28 px-5 md:px-8 overflow-hidden">
+  <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[var(--signal)]/10 blur-3xl"></div>
+  <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[var(--riot)]/10 blur-3xl"></div>
+  <div class="relative max-w-5xl mx-auto text-center">
+    <span class="num-tag reveal inline-block mb-6">THE VZOON DEAL</span>
+    <h2 class="reveal font-display text-[var(--bone)] text-5xl md:text-8xl leading-none">
+      ANY 3 ITEMS
+    </h2>
+    <h3 class="reveal font-display text-[var(--signal)] text-5xl md:text-8xl leading-none mt-2">
+      ONLY ₹1099
+    </h3>
+    <p class="reveal text-[var(--bone)]/70 mt-7 max-w-lg mx-auto">No fine print. No category restrictions. Mix any 3 of the combinations below — or invent your own.</p>
+
+    <div class="reveal-stagger flex flex-wrap justify-center gap-3 mt-10">
+      <span class="reveal hangtag-dark hangtag font-tag text-xs" style="--i:0">✓ SHIRT + SHIRT + SHIRT</span>
+      <span class="reveal hangtag-dark hangtag font-tag text-xs" style="--i:1">✓ SHIRT + JEANS + SHOES</span>
+      <span class="reveal hangtag-dark hangtag font-tag text-xs" style="--i:2">✓ JEANS + PANT + SHIRT</span>
+      <span class="reveal hangtag-dark hangtag font-tag text-xs" style="--i:3">✓ SHOES + SHOES + SHIRT</span>
+    </div>
+
+    <a href="#arrivals" class="reveal btn-primary inline-block mt-12">Grab Offer</a>
+  </div>
+</section>
+
+<!-- ============ NEW ARRIVALS ============ -->
+<section id="arrivals" class="bg-[var(--bone)] py-24 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-14">
+      <h2 class="font-display text-4xl md:text-5xl">NEW ARRIVALS</h2>
+      <p class="text-[var(--smoke)] max-w-md">Fresh stock, eligible for the ₹1099 / 3 items offer.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 reveal-stagger" id="productGrid">
+      <!-- product card template x8 -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORE LOCATOR ============ -->
+<section id="stores" class="bg-[var(--charcoal)] py-24 px-5 md:px-8 text-[var(--bone)]">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-14">
+      <span class="num-tag inline-block mb-4">VISIT US</span>
+      <h2 class="font-display text-4xl md:text-5xl">JAIPUR STORE LOCATIONS</h2>
+      <p class="text-[var(--smoke)] mt-3 max-w-lg">Same offer, every branch. Trial rooms, AC comfort and parking at every store.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="reveal store-card bg-[var(--charcoal-2)] border border-[var(--line)] p-7 rounded-sm">
+        <h3 class="font-display text-xl mb-1">VZOON — C-SCHEME</h3>
+        <p class="text-sm text-[var(--smoke)] mb-4">Shop 14, C-Scheme Market, Jaipur 302001</p>
+        <ul class="space-y-1.5 text-sm mb-5">
+          <li class="flex items-center gap-2"><span class="text-[var(--signal)]">●</span> Open 10:30 AM – 9:30 PM</li>
+          <li class="flex items-center gap-2"><span class="text-[var(--signal)]">●</span> Parking Available</li>
+          <li class="flex items-center gap-2"><span class="text-[var(--signal)]">●</span> Air Conditioned Store</li>
+        </ul>
+        <div class="flex gap-3">
+          <a href="https://maps.google.com/?q=C-Scheme+Jaipur" target="_blank" class="flex-1 text-center text-xs font-tag font-bold border border-[var(--bone)]/30 py-2.5 rounded-sm hover:bg-[var(--bone)] hover:text-[var(--ink)] transition">MAPS</a>
+          <a href="tel:+919000000001" class="flex-1 text-center text-xs font-tag font-bold bg-[var(--riot)] py-2.5 rounded-sm hover:opacity-90 transition">CALL</a>
+        </div>
+      </div>
+
+      <div class="reveal store-card bg-[var(--charcoal-2)] border border-[var(--line)] p-7 rounded-sm">
+        <h3 class="font-display text-xl mb-1">VZOON — VAISHALI NAGAR</h3>
+        <p class="text-sm text-[var(--smoke)] mb-4">Main Market, Vaishali Nagar, Jaipur 302021</p>
+        <ul class="space-y-1.5 text-sm mb-5">
+          <li class="flex items-center gap-2"><span class="text-[var(--signal)]">●</span> Open 10:30 AM – 9:30 PM</li>
+          <li class="flex items-center gap-2"><span class="text-[var(--signal)]">●</span> Parking Available</li>
+          <li class="flex items-center gap-2"><span class="text-[var(--signal)]">●</span> Air Conditioned Store</li>
+        </ul>
+        <div class="flex gap-3">
+          <a href="https://maps.google.com/?q=Vaishali+Nagar+Jaipur" target="_blank" class="flex-1 text-center text-xs font-tag font-bold border border-[var(--bone)]/30 py-2.5 rounded-sm hover:bg-[var(--bone)] hover:text-[var(--ink)] transition">MAPS</a>
+          <a href="tel:+919000000002" class="flex-1 text-center text-xs font-tag font-bold bg-[var(--riot)] py-2.5 rounded-sm hover:opacity-90 transition">CALL</a>
+        </div>
+      </div>
+
+      <div class="reveal store-card bg-[var(--charcoal-2)] border border-[var(--line)] p-7 rounded-sm">
+        <h3 class="font-display text-xl mb-1">VZOON — TONK ROAD</h3>
+        <p class="text-sm text-[var(--smoke)] mb-4">Near World Trade Park, Tonk Road, Jaipur 302018</p>
+        <ul class="space-y-1.5 text-sm mb-5">
+          <li class="flex items-center gap-2"><span class="text-[var(--signal)]">●</span> Open 11:00 AM – 10:00 PM</li>
+          <li class="flex items-center gap-2"><span class="text-[var(--signal)]">●</span> Parking Available</li>
+          <li class="flex items-center gap-2"><span class="text-[var(--signal)]">●</span> Air Conditioned Store</li>
+        </ul>
+        <div class="flex gap-3">
+          <a href="https://maps.google.com/?q=Tonk+Road+Jaipur" target="_blank" class="flex-1 text-center text-xs font-tag font-bold border border-[var(--bone)]/30 py-2.5 rounded-sm hover:bg-[var(--bone)] hover:text-[var(--ink)] transition">MAPS</a>
+          <a href="tel:+919000000003" class="flex-1 text-center text-xs font-tag font-bold bg-[var(--riot)] py-2.5 rounded-sm hover:opacity-90 transition">CALL</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal rounded-sm overflow-hidden border border-[var(--line)]">
+      <iframe src="https://www.google.com/maps?q=Jaipur,Rajasthan&output=embed" width="100%" height="380" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p class="text-xs text-[var(--smoke)] mt-2">Placeholder addresses &amp; map — update with exact store coordinates anytime via the store data file.</p>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="bg-[var(--bone)] py-24 px-5 md:px-8">
+  <div class="max-w-5xl mx-auto text-center">
+    <span class="num-tag reveal inline-block mb-4 !text-[var(--ink)] !border-[var(--ink)]/20">CUSTOMER LOVE</span>
+    <h2 class="reveal font-display text-4xl md:text-5xl mb-3">RATED BY JAIPUR</h2>
+    <div class="reveal flex items-center justify-center gap-2 mb-12">
+      <span class="text-[var(--signal)] text-2xl">★★★★★</span>
+      <span class="text-[var(--smoke)] text-sm font-tag">4.7 / 5 · GOOGLE REVIEWS</span>
+    </div>
+
+    <div class="relative reveal">
+      <div id="testiTrack" class="overflow-hidden">
+        <div class="flex transition-transform duration-500" id="testiInner">
+          <div class="w-full shrink-0 px-4">
+            <div class="bg-white shadow-xl rounded-sm p-9 max-w-xl mx-auto">
+              <p class="text-[var(--signal)] mb-3">★★★★★</p>
+              <p class="text-lg mb-5">"Picked a shirt, jeans and sneakers for under eleven hundred. The fit and stitching genuinely surprised me — feels like a mall-brand price tag without the mall-brand markup."</p>
+              <p class="font-tag text-xs text-[var(--smoke)]">— ROHIT S., MALVIYA NAGAR</p>
+            </div>
+          </div>
+          <div class="w-full shrink-0 px-4">
+            <div class="bg-white shadow-xl rounded-sm p-9 max-w-xl mx-auto">
+              <p class="text-[var(--signal)] mb-3">★★★★★</p>
+              <p class="text-lg mb-5">"College budget, office-ready wardrobe. I restock every month because the offer makes it painless to keep my rotation fresh."</p>
+              <p class="font-tag text-xs text-[var(--smoke)]">— ARJUN K., VAISHALI NAGAR</p>
+            </div>
+          </div>
+          <div class="w-full shrink-0 px-4">
+            <div class="bg-white shadow-xl rounded-sm p-9 max-w-xl mx-auto">
+              <p class="text-[var(--signal)] mb-3">★★★★★</p>
+              <p class="text-lg mb-5">"Staff helped me build 3 different outfits from the same 3 items. Trial room queue moved fast, billing was quick — in and out in twenty minutes."</p>
+              <p class="font-tag text-xs text-[var(--smoke)]">— DEV P., TONK ROAD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center gap-2 mt-7">
+        <span class="testi-dot active" data-i="0"></span>
+        <span class="testi-dot" data-i="1"></span>
+        <span class="testi-dot" data-i="2"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery" class="bg-[var(--ink)] py-24 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-14">
+      <span class="num-tag inline-block mb-4">INSIDE VZOON</span>
+      <h2 class="font-display text-4xl md:text-5xl text-[var(--bone)]">THE GALLERY</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 reveal-stagger">
+      <div class="reveal card-img-zoom rounded-sm aspect-square" style="--i:0"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Store interior"></div>
+      <div class="reveal card-img-zoom rounded-sm aspect-square row-span-2" style="--i:1"><img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Customer trying clothes"></div>
+      <div class="reveal card-img-zoom rounded-sm aspect-square" style="--i:2"><img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Folded shirts display"></div>
+      <div class="reveal card-img-zoom rounded-sm aspect-square" style="--i:3"><img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Denim collection"></div>
+      <div class="reveal card-img-zoom rounded-sm aspect-square" style="--i:4"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Fashion collection rack"></div>
+      <div class="reveal card-img-zoom rounded-sm aspect-square" style="--i:5"><img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Sneaker wall display"></div>
+      <div class="reveal card-img-zoom rounded-sm aspect-square" style="--i:6"><img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" loading="lazy" alt="Men shopping"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="bg-[var(--bone)] py-24 px-5 md:px-8">
+  <div class="max-w-3xl mx-auto">
+    <div class="reveal mb-12 text-center">
+      <span class="num-tag inline-block mb-4 !text-[var(--ink)] !border-[var(--ink)]/20">GOOD TO KNOW</span>
+      <h2 class="font-display text-4xl md:text-5xl">FAQ</h2>
+    </div>
+    <div class="space-y-3" id="faqList">
+      <div class="reveal faq-item border border-black/10 rounded-sm overflow-hidden">
+        <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold">
+          How does the ₹1099 offer work?
+          <span class="faq-icon text-xl text-[var(--signal)]">+</span>
+        </button>
+        <div class="accordion-content"><p class="px-5 pb-5 text-[var(--smoke)] text-sm">Pick any 3 eligible items from the store — across shirts, jeans, pants, t-shirts and shoes — and pay one flat price of ₹1099 at billing, no matter the combination.</p></div>
+      </div>
+      <div class="reveal faq-item border border-black/10 rounded-sm overflow-hidden">
+        <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold">
+          Can I mix shirts and shoes in the same offer?
+          <span class="faq-icon text-xl text-[var(--signal)]">+</span>
+        </button>
+        <div class="accordion-content"><p class="px-5 pb-5 text-[var(--smoke)] text-sm">Yes — any 3 eligible items count, in any combination. Shirt + Shirt + Shoes, Jeans + Pant + Shirt, or 3 of the same item all qualify.</p></div>
+      </div>
+      <div class="reveal faq-item border border-black/10 rounded-sm overflow-hidden">
+        <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold">
+          Are trial rooms available in-store?
+          <span class="faq-icon text-xl text-[var(--signal)]">+</span>
+        </button>
+        <div class="accordion-content"><p class="px-5 pb-5 text-[var(--smoke)] text-sm">Every VZOON store has clean, air-conditioned trial rooms with no limit on the number of items you bring in.</p></div>
+      </div>
+      <div class="reveal faq-item border border-black/10 rounded-sm overflow-hidden">
+        <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold">
+          Can I exchange items after purchase?
+          <span class="faq-icon text-xl text-[var(--signal)]">+</span>
+        </button>
+        <div class="accordion-content"><p class="px-5 pb-5 text-[var(--smoke)] text-sm">Exchanges are accepted within 7 days with the original bill and tags intact, at the same or another VZOON store.</p></div>
+      </div>
+      <div class="reveal faq-item border border-black/10 rounded-sm overflow-hidden">
+        <button class="faq-q w-full flex justify-between items-center text-left p-5 font-semibold">
+          Which Jaipur branches have this offer?
+          <span class="faq-icon text-xl text-[var(--signal)]">+</span>
+        </button>
+        <div class="accordion-content"><p class="px-5 pb-5 text-[var(--smoke)] text-sm">The ₹1099-for-3 offer runs at every VZOON branch in Jaipur, including C-Scheme, Vaishali Nagar and Tonk Road.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="bg-[var(--charcoal)] text-[var(--bone)] py-24 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
+    <div class="reveal">
+      <span class="num-tag inline-block mb-4">GET IN TOUCH</span>
+      <h2 class="font-display text-4xl md:text-5xl mb-6">TALK TO VZOON</h2>
+      <div class="space-y-5 text-sm">
+        <a href="tel:+919000000000" class="flex items-center gap-3 hover:text-[var(--signal)] transition">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .36 1.97.68 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.18-1.18a2 2 0 0 1 2.11-.45c.93.32 1.9.55 2.9.68A2 2 0 0 1 22 16.92z"/></svg>
+          +91 90000 00000
+        </a>
+        <a href="https://wa.me/919000000000" target="_blank" class="flex items-center gap-3 hover:text-[var(--signal)] transition">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.3-6.2-3.5-8.5zM12 22a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg>
+          WhatsApp Us
+        </a>
+        <a href="mailto:hello@vzoon.in" class="flex items-center gap-3 hover:text-[var(--signal)] transition">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          hello@vzoon.in
+        </a>
+        <p class="flex items-center gap-3 text-[var(--smoke)]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Open daily 10:30 AM – 9:30 PM
+        </p>
+      </div>
+      <div class="flex gap-4 mt-8">
+        <a href="javascript:void(0)" class="w-10 h-10 rounded-full border border-[var(--bone)]/30 flex items-center justify-center hover:bg-[var(--signal)] hover:text-[var(--ink)] transition">IG</a>
+        <a href="javascript:void(0)" class="w-10 h-10 rounded-full border border-[var(--bone)]/30 flex items-center justify-center hover:bg-[var(--signal)] hover:text-[var(--ink)] transition">FB</a>
+        <a href="javascript:void(0)" class="w-10 h-10 rounded-full border border-[var(--bone)]/30 flex items-center justify-center hover:bg-[var(--signal)] hover:text-[var(--ink)] transition">YT</a>
+      </div>
+    </div>
+    <div class="reveal rounded-sm overflow-hidden border border-[var(--line)] min-h-[320px]">
+      <iframe src="https://www.google.com/maps?q=Jaipur,Rajasthan&output=embed" width="100%" height="100%" style="border:0; min-height:320px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-[var(--ink)] text-[var(--bone)] pt-16 pb-8 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10 pb-12 border-b border-[var(--line)]">
+    <div>
+      <div class="font-display text-3xl mb-3">VZ<span class="text-[var(--signal)]">O</span>ON</div>
+      <p class="text-sm text-[var(--smoke)]">Jaipur's mix-and-match men's fashion house. Any 3 items, ₹1099 flat — always.</p>
+    </div>
+    <div>
+      <h4 class="font-tag text-xs text-[var(--signal)] mb-4 tracking-widest">QUICK LINKS</h4>
+      <ul class="space-y-2 text-sm text-[var(--smoke)]">
+        <li><a href="#home" class="hover:text-[var(--bone)]">Home</a></li>
+        <li><a href="#offer" class="hover:text-[var(--bone)]">Offers</a></li>
+        <li><a href="#gallery" class="hover:text-[var(--bone)]">Gallery</a></li>
+        <li><a href="#contact" class="hover:text-[var(--bone)]">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-tag text-xs text-[var(--signal)] mb-4 tracking-widest">CATEGORIES</h4>
+      <ul class="space-y-2 text-sm text-[var(--smoke)]">
+        <li><a href="#categories" class="hover:text-[var(--bone)]">Shirts</a></li>
+        <li><a href="#categories" class="hover:text-[var(--bone)]">Jeans</a></li>
+        <li><a href="#categories" class="hover:text-[var(--bone)]">Shoes</a></li>
+        <li><a href="#categories" class="hover:text-[var(--bone)]">Accessories</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-tag text-xs text-[var(--signal)] mb-4 tracking-widest">LOCATIONS</h4>
+      <ul class="space-y-2 text-sm text-[var(--smoke)]">
+        <li><a href="#stores" class="hover:text-[var(--bone)]">C-Scheme</a></li>
+        <li><a href="#stores" class="hover:text-[var(--bone)]">Vaishali Nagar</a></li>
+        <li><a href="#stores" class="hover:text-[var(--bone)]">Tonk Road</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto flex flex-wrap justify-between gap-4 pt-6 text-xs text-[var(--smoke)]">
+    <span>© <span id="year"></span> VZOON. All rights reserved.</span>
+    <div class="flex gap-6">
+      <a href="javascript:void(0)" class="hover:text-[var(--bone)]">Privacy Policy</a>
+      <a href="javascript:void(0)" class="hover:text-[var(--bone)]">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING BUTTONS ============ -->
+<a href="https://wa.me/919000000000" target="_blank" aria-label="WhatsApp" class="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-2xl hover:scale-110 transition">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.3-6.2-3.5-8.5zM12 22a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22z"/></svg>
+</a>
+<a href="tel:+919000000000" aria-label="Call" class="fixed bottom-6 left-24 z-40 w-14 h-14 rounded-full bg-[var(--riot)] flex items-center justify-center shadow-2xl hover:scale-110 transition">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .36 1.97.68 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.18-1.18a2 2 0 0 1 2.11-.45c.93.32 1.9.55 2.9.68A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+<button id="backToTop" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-[var(--bone)] text-[var(--ink)] flex items-center justify-center shadow-2xl opacity-0 pointer-events-none transition-all hover:bg-[var(--signal)]">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<script>
+/* ---------- DATA (CMS-style, swap easily) ---------- */
+const PRODUCTS = [
+  {name:"Oxford Slim Shirt", mrp:899, tag:"3 FOR ₹1099", img:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=600&auto=format&fit=crop"},
+  {name:"Classic Denim Jeans", mrp:1199, tag:"3 FOR ₹1099", img:"https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=600&auto=format&fit=crop"},
+  {name:"Tapered Chino Pant", mrp:999, tag:"3 FOR ₹1099", img:"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=600&auto=format&fit=crop"},
+  {name:"Street Runner Sneakers", mrp:1499, tag:"3 FOR ₹1099", img:"https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=600&auto=format&fit=crop"},
+  {name:"Essential Crew Tee", mrp:599, tag:"3 FOR ₹1099", img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop"},
+  {name:"Linen Casual Shirt", mrp:1099, tag:"3 FOR ₹1099", img:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=600&auto=format&fit=crop"},
+  {name:"Distressed Denim", mrp:1299, tag:"3 FOR ₹1099", img:"https://images.unsplash.com/photo-1565084888279-aca607ecce0c?q=80&w=600&auto=format&fit=crop"},
+  {name:"Canvas Low-Tops", mrp:1399, tag:"3 FOR ₹1099", img:"https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=600&auto=format&fit=crop"},
+];
+
+const grid = document.getElementById('productGrid');
+PRODUCTS.forEach((p,i)=>{
+  const card = document.createElement('div');
+  card.className = 'reveal group';
+  card.style.setProperty('--i', i);
+  card.innerHTML = `
+    <div class="relative card-img-zoom rounded-sm aspect-[3/4] bg-[var(--line)]">
+      <img src="${p.img}" loading="lazy" alt="${p.name}" class="w-full h-full object-cover">
+      <span class="absolute top-3 left-3 hangtag-red hangtag font-tag !text-[10px] !py-1.5 !px-2.5">${p.tag}</span>
+      <button class="heart-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center" aria-label="Wishlist">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B0B0C" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+      <div class="absolute inset-x-0 bottom-0 p-3 translate-y-12 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <button class="w-full bg-[var(--ink)] text-[var(--bone)] text-xs font-tag font-bold py-2.5 rounded-sm">QUICK VIEW</button>
+      </div>
+    </div>
+    <div class="mt-3">
+      <h3 class="font-semibold text-sm">${p.name}</h3>
+      <p class="text-sm mt-1"><span class="price-strike mr-2">₹${p.mrp}</span><span class="font-tag font-bold text-[var(--riot)]">PART OF 3-FOR-₹1099</span></p>
+    </div>`;
+  grid.appendChild(card);
+});
+document.querySelectorAll('.heart-btn').forEach(b=>b.addEventListener('click', e=>{e.preventDefault(); b.classList.toggle('active');}));
+
+/* ---------- LOADER ---------- */
+window.addEventListener('load', ()=>{
+  const loader = document.getElementById('loader');
+  setTimeout(()=>{ loader.style.opacity=0; setTimeout(()=>loader.style.display='none', 700); }, 400);
+});
+
+/* ---------- NAV ---------- */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', ()=>{
+  navbar.classList.toggle('shadow-xl', window.scrollY > 40);
+  document.getElementById('backToTop').style.opacity = window.scrollY > 600 ? 1 : 0;
+  document.getElementById('backToTop').style.pointerEvents = window.scrollY > 600 ? 'auto' : 'none';
+});
+document.getElementById('menuBtn').addEventListener('click', ()=>{
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+});
+document.querySelectorAll('.mob-link').forEach(l=>l.addEventListener('click', ()=>document.getElementById('mobileMenu').classList.add('hidden')));
+document.getElementById('backToTop').addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ---------- SCROLL REVEAL ---------- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+}, {threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- FAQ ACCORDION ---------- */
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector('.faq-icon');
+    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+    document.querySelectorAll('.accordion-content').forEach(c=>c.style.maxHeight='0px');
+    document.querySelectorAll('.faq-icon').forEach(i=>i.textContent='+');
+    if(!isOpen){ content.style.maxHeight = content.scrollHeight + 'px'; icon.textContent='–'; }
+  });
+});
+
+/* ---------- TESTIMONIAL CAROUSEL ---------- */
+let testiIndex = 0;
+const testiInner = document.getElementById('testiInner');
+const dots = document.querySelectorAll('.testi-dot');
+function showTesti(i){
+  testiIndex = i;
+  testiInner.style.transform = `translateX(-${i*100}%)`;
+  dots.forEach(d=>d.classList.remove('active'));
+  dots[i].classList.add('active');
+}
+dots.forEach(d=>d.addEventListener('click', ()=>showTesti(parseInt(d.dataset.i))));
+setInterval(()=>showTesti((testiIndex+1)%dots.length), 5000);
+
+/* ---------- FOOTER YEAR ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
